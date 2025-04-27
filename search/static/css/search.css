@@ -1,0 +1,49 @@
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  appearance: none;
+  border: var(--border);
+  border-radius: .25rem;
+  font-family: var(--font-family-book);
+  font-size: var(--font-size-medium);
+  padding: .5rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 1rem 0 .25rem;
+}
+
+.helptext {
+  display: block;
+}
+
+form {
+  display: flex;
+  gap: .25rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.results-count {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.results {
+  padding: 0;
+}
+
+.results li {
+  border-top: var(--border);
+  list-style: none;
+  padding: 2rem 0;
+}
+
+@media all and (min-width: 1000px) {
+  .results li {
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,46 @@
+.stars {
+  overflow: hidden;
+}
+
+@keyframes stars {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(var(--stars-translate));
+  }
+}
+
+.stars1 {
+  animation: stars var(--stars-duration) linear infinite;
+  box-shadow: var(--stars);
+  height: 1px;
+  text-align: left;
+  width: 1px;
+}
+
+.stars1:after {
+  box-shadow: var(--stars);
+  content: " ";
+  height: 1px;
+  position: absolute;
+  top: var(--stars-top);
+  width: 1px;
+}
+
+.stars2 {
+  animation: stars var(--stars2-duration) linear infinite;
+  box-shadow: var(--stars2);
+  height: 2px;
+  width: 2px;
+}
+
+.stars2:after {
+  box-shadow: var(--stars2);
+  content: " ";
+  height: 2px;
+  position: absolute;
+  top: var(--stars-top);
+  width: 2px;
+}

@@ -1,0 +1,44 @@
+.portfolio-wrap {
+  margin: 5rem auto 0;
+  max-width: 850px;
+}
+
+.portfolio-index-page .project-links,
+.portfolio-page .project-links {
+  padding: 0;
+}
+
+.project-links li {
+  list-style: none;
+}
+
+.further-projects {
+  border-top: var(--border);
+  margin-top: 5rem;
+  padding-top: 4rem;
+}
+
+.further-projects h2,
+.further-projects p {
+  text-align: center;
+}
+
+.further-projects h2 {
+  margin-bottom: 1.5rem;
+}
+
+.further-projects ul {
+  margin-top: 5rem;
+}
+
+@media all and (min-width: 1000px) {
+  .further-projects ul {
+    column-count: 2;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .further-projects ul {
+    column-count: 3;
+  }
+}

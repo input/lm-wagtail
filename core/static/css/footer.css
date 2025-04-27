@@ -1,0 +1,23 @@
+footer {
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  background-color: #fff;
+  color: var(--color-button-home-text);
+  outline: .25rem solid #fff;
+}
+
+.home footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}

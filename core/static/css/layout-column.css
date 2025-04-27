@@ -1,0 +1,21 @@
+.layout-column {
+  margin-top: 3.5rem;
+}
+
+.layout-column h2 {
+  padding: 2rem 0 1rem 0;
+}
+
+@media all and (min-width: 1000px) {
+  .layout-column {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 5rem;
+  }
+  .layout-column > div {
+    flex: 1;
+  }
+  .layout-column h2 {
+    border-top: var(--border);
+  }
+}

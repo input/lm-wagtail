@@ -1,0 +1,23 @@
+a {
+  color: var(--color-link);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main a:not(.button):hover {
+  background-color: var(--color-link);
+  color: var(--color-link-hover);
+  outline: .25rem solid var(--color-link);
+}
+
+.skip-link,
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}

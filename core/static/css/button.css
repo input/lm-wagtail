@@ -1,0 +1,30 @@
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button {
+  appearance: none;
+  background-color: var(--color-button);
+  border: none;
+  border-radius: 2rem;
+  color: var(--color-button-text);
+  cursor: pointer;
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-medium);
+  line-height: 1.5;
+  padding: .75rem 1.5rem;
+  /* .button */
+  display: inline-block;
+  text-decoration: none;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+.button:hover {
+  background-color: var(--color-button-hover);
+  color: #fff;
+  outline: none;
+  text-decoration: underline;
+}

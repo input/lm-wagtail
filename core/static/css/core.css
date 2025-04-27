@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.75;
+}
+
+body {
+  background: var(--color-bg-body);
+  color: var(--color-text);
+  font-family: var(--font-family-book);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-medium);
+  font-weight: 400;
+}
+
+p,
+main ul,
+ol {
+  margin-bottom: 1.5rem;
+}
+
+main ul ul {
+  margin: 0;
+}
+
+body:not(.home) main ul {
+  padding-left: 1rem;
+}
+
+.about p:has(+ ul) {
+  margin-bottom: 0;
+}
+
+ol {
+  padding-left: 2rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: var(--border);
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+code {
+  background-color: var(--color-code-bg);
+  border: var(--border);
+  border-radius: .25rem;
+  color: var(--color-code);
+  font-family: 'Fira Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  padding: 0 .25rem;
+  word-wrap: break-word;
+}
+
+pre:has(code) {
+  margin-bottom: 1.5rem;
+}
+
+.filename + pre code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.filename {
+  border: var(--border);
+  border-bottom: 0;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  display: block;
+  font-family: 'Fira Mono', monospace;
+  padding: .5em 1em;
+}
+
+.return {
+  margin-top: 5rem;
+  text-align: center;
+}

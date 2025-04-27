@@ -1,0 +1,44 @@
+.blog-page h2,
+.blog-page h3 {
+  margin: 3rem 0 1rem;
+}
+
+article {
+  border-bottom: var(--border);
+  padding: 2rem 0 .5rem;
+}
+
+article:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.dateline {
+  margin-bottom: .5rem;
+}
+
+.blog-wrap {
+  margin: 0 auto;
+  max-width: 850px;
+}
+
+.tags {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+}
+
+.tags:has(a) {
+  margin-bottom: 0;
+  padding: 0 0 1.5rem !important;
+}
+
+.tags li {
+  list-style: none;
+}
+
+.tag {
+  border: var(--border);
+  border-radius: .25rem;
+  display: block;
+  padding: .1rem .75rem;
+}

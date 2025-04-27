@@ -1,0 +1,29 @@
+main {
+  background-color: var(--color-bg);
+}
+
+.intro {
+  margin: 0 auto 3.5rem;
+  max-width: 65ch;
+}
+
+h1,
+.intro {
+  text-align: center;
+}
+
+.home main {
+  color: #fff;
+  padding: 0;
+  text-align: center;
+}
+
+body:not(.home) main {
+  padding: 2.5rem 1rem;
+}
+
+@media all and (min-width: 1000px) {
+  body:not(.home) main {
+    padding: 3.5rem 3rem;
+  }
+}

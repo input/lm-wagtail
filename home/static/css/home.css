@@ -1,0 +1,29 @@
+.home header {
+  position: absolute;
+  width: calc(100% - 2rem);
+}
+
+.home main {
+  background-color: initial;
+}
+
+.hero {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100dvh;
+  justify-content: center;
+  min-height: 40rem;
+}
+
+.hero h1 {
+  margin: 0;
+  max-inline-size: 25ch;
+  padding: 0 1rem;
+}
+
+.button {
+  background-color: var(--color-button-home);
+  color: var(--color-button-home-text);
+}
