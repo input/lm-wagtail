@@ -1,0 +1,20 @@
+{% load wagtailcore_tags navigation_tags %}
+
+<header role="banner">
+  {% get_site_root as site_root %}
+  <a href="{% pageurl site_root %}" rel="home" class="site-name">Laurence Mercer</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="mm menu-open" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ffffff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+  <nav role="navigation">
+    <div class="mm mm-header">
+      <a href="{% pageurl site_root %}" rel="home" class="site-name">Laurence Mercer</a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="menu-close" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ffffff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+    </div>
+    <ul class="menu">
+      <li><a href="{% pageurl site_root %}">{{ site_root.title }}</a></li>
+      {% for menuitem in site_root.get_children.live.in_menu %}
+        <li><a href="{% pageurl menuitem %}">{{ menuitem.title }}</a></li>
+      {% endfor %}
+      <li class="search"><a href="/search/">Search</a></li>
+    </ul>
+  </nav>
+</header>

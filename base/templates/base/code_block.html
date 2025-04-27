@@ -1,0 +1,6 @@
+{% load wagtailcore_tags %}
+
+{% if value.filename %}
+<span class="filename"># {{ value.filename }}</span>
+{% endif %}
+<pre><code class="language-{{ value.language }}">{{ value.code }}</code></pre>

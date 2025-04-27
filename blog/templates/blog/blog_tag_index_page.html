@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="blog-wrap">
+  {% if request.GET.tag %}
+    <h1>Posts tagged "{{ request.GET.tag }}"</h1>
+  {% else %}
+    <h1>Tag not found</h1>
+  {% endif %}
+
+  {% for post in blog_pages %}
+    <article>
+    {% with post=post.specific %}
+      <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+      <p class="dateline">{{ post.date|date:"j F Y" }}</p>
+    {% endwith %}
+    </article>
+  {% empty %}
+      <p>Sorry, no posts with this tag were found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

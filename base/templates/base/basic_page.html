@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}{{ page.slug }}-page{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/basic-page.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<h1>{{ page.title }}</h1>
+
+<div class="intro">
+  {{ page.intro|richtext }}
+</div>
+
+{% include_block page.body %}
+{% endblock %}

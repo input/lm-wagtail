@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}search-page{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock extra_css %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<h1>Search</h1>
+
+<form action="{% url 'search' %}" method="get">
+  <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+  <input type="submit" value="Search" class="button">
+</form>
+
+{% if search_results %}
+<p class="results-count">{{ search_results.paginator.count }} result{{ search_results.paginator.count|pluralize }} found {% if search_query %}for "{{ search_query }}"{% endif %}</p>
+
+<ul class="results">
+  {% for result in search_results %}
+  <li>
+    <h2>{{ result.specific.get_verbose_name }}: <a href="{% pageurl result %}">{{ result }}</a></h2>
+    {% if result.search_description %}
+    {{ result.search_description }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% if search_results.has_previous %}
+<a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% if search_results.has_next %}
+<a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+{% endif %}
+{% elif search_query %}
+<p class="results-count">No results found</p>
+{% endif %}
+{% endblock %}

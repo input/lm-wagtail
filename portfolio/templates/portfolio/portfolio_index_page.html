@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}portfolio-index-page{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/layout-column.css' %}">
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<h1>{{ page.title }}</h1>
+
+<div class="intro">{{ page.intro|richtext }}</div>
+
+{% for featured_project in page.featured_projects.all %}
+  {% with project=featured_project.project.specific %}
+    <div class="layout-column">
+      <div class="img">
+        {% with project.main_image as main_image %}
+          {% if main_image %}
+            {% image main_image original as image %}
+            <img src="{{ image.url }}" alt="{{ image.alt }}">
+          {% endif %}
+        {% endwith %}
+      </div>
+      <div>
+        <h2><a href="{% pageurl project %}">{{ project.title }}</a></h2>
+        <ul class="project-links">
+          {% for link in project.project_links.all %}
+          <li><a href="{{ link.url }}">{{ link.text }} &rarr;</a></li>
+          {% endfor %}
+        </ul>
+        <p>Role: {{ project.role }}</p>
+        <p>Stack: {{ project.stack }}</p>
+        {{ project.summary|richtext }}
+      </div>
+    </div>
+  {% endwith %}
+{% endfor %}
+
+<div class="further-projects">
+  <h2>Further projects</h2>
+  {{ page.further_projects|richtext }}
+</div>
+{% endblock %}

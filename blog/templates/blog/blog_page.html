@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block title_parent %} | Blog{% endblock %}
+{% block body_class %}blog-page{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/a11y-dark.min.css' %}">
+{% endblock extra_css %}
+{% block extra_js %}
+<script src="{% static 'js/highlight.min.js' %}" defer></script>
+<script src="{% static 'js/code.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="blog-wrap">
+  <h1>{{ page.title }}</h1>
+
+  <div class="intro">
+    <p class="dateline">{{ page.date|date:"j F Y" }}</p>
+  </div>
+
+  {% with tags=page.tags.all %}
+    {% if tags %}
+      <ul class="tags">
+        {% for tag in tags %}
+          <li><a href="{% slugurl 'tags' %}?tag={{ tag }}" class="tag">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% include_block page.body %}
+
+  <p class="return"><a href="{{ page.get_parent.url }}" class="button">Return to blog</a></p>
+</div>
+{% endblock %}
