@@ -54,6 +54,12 @@ img {
   max-width: 100%;
 }
 
+figcaption {
+  font-style: italic;
+  padding: .5rem 0;
+  text-align: center;
+}
+
 blockquote {
   border-left: var(--border);
   margin-left: 1.5rem;

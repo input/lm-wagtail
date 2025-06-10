@@ -1,0 +1,7 @@
+{% load wagtailimages_tags %}
+
+<figure>
+  {% image value original as image %}
+  <img src="{{ image.url }}" alt="{{ image.alt }}" />
+  <figcaption>{{ image.alt }}</figcaption>
+</figure>
